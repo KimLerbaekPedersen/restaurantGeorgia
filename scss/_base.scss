@@ -1,0 +1,93 @@
+//_BASE.SCSS
+$color-dark: #262626;
+$color-black: #000;
+$color-primary: #d3ab55;
+$color-secondary: #bbb;
+$color-white: #fff;
+
+$font-dancingScript: 'Dancing Script',cursive;
+$font-josefinSans: 'Josefin Sans',sans-serif;
+$font-nunito: 'Nunito',sans-serif;
+
+%fullSpace{
+    width: 100%;
+    height: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: $color-dark;
+}
+
+//====MIXINS====//
+@mixin flexLayout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin textStyles($transform: uppercase) {
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: $transform;
+}
+
+@mixin centering($topValue) {
+    position: absolute;
+    top:$topValue;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin media-1 {
+    @media (max-width: 1600px) {
+        @content;
+    }
+    
+}
+@mixin media-2 {
+    @media (max-width: 1300px) {
+        @content;
+    }
+    
+}
+@mixin media-3 {
+    @media (max-width: 1000px) {
+        @content;
+    }
+    
+}
+@mixin media-4 {
+    @media (max-width: 900px) {
+        @content;
+    }
+    
+}
+@mixin media-5 {
+    @media (max-width: 800px) {
+        @content;
+    }
+    
+}
+@mixin media-6 {
+    @media (max-width: 650px) {
+        @content;
+    }
+    
+}
+@mixin media-7 {
+    @media (max-width: 500px) {
+        @content;
+    }
+    
+}
+@mixin media-8 {
+    @media (max-width: 600px) {
+        @content;
+    }
+    
+}

@@ -1,0 +1,270 @@
+//_COMPONENTS.SCSS
+.hamburger-menu{
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    z-index: 300;
+
+    @include media-5(){
+        width: 35px;
+        height: 35px;
+    }
+
+    @include media-7(){
+        width: 25px;
+        height: 25px;
+    }
+
+    .menu{
+        @extend %fullSpace;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+        transition: transform 0.5s;
+
+        &-line{
+            width: 100%;
+            height: 4px;
+            background-color: $color-primary;
+            transform-origin: right;
+            transition: all 0.5s 0.5s;
+
+            @include media-5(){
+                height: 3px;
+            }
+
+            @include media-7(){
+                height: 2px;
+            }
+        }
+    }
+}
+
+.logo{
+    font-size: 70px;
+    color: $color-primary;
+    width: 110px;
+    height: 110px;
+    border: 3px solid $color-primary;
+    border-radius: 50%;
+    margin-right: 20px;
+    text-decoration: none;
+    @include flexLayout;
+
+    @include media-3(){
+        font-size: 50px;
+        width: 90px;
+        height: 90px;
+    }
+
+    @include media-7(){
+        height: 50px;
+        width: 50px;
+        font-size: 30px;
+        border-width: 2px;
+    }
+}
+
+.main-name{
+    font-family: $font-nunito;
+    font-size: 50px;
+    color: $color-secondary;
+    @include textStyles;
+
+    @include media-3(){
+        font-size: 60px;
+    }
+
+    @include media-7(){
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+.sub-name{
+    font-family: $font-josefinSans;
+    font-size: 18px;
+    color: $color-secondary;
+    text-align: center;
+    @include textStyles;
+
+    @include media-7(){
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+.main-heading{
+    font-family: $font-dancingScript;
+    font-size: 100px;
+    font-weight: 300;
+    color: $color-primary;
+    margin-bottom: 40px;
+
+    @include media-1(){
+        font-size: 80px;
+    }
+
+    @include media-7(){
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+}
+
+.sub-heading{
+    font-family: $font-josefinSans;
+    font-size: 60px;
+    font-weight: 300;
+    color: $color-secondary;
+    margin-bottom: 80px;
+    text-align: center;
+
+    @include media-1(){
+        font-size: 50px;
+        margin-bottom: 50px;
+    }
+
+    @include media-2(){
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+
+    @include media-3(){
+        font-size: 30px;
+    }
+
+    @include media-7(){
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+.main-btn{
+    width: 170px;
+    height: 45px;
+    font-family: $font-josefinSans;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $color-primary;
+    background-color: transparent;
+    border: 1px solid $color-primary;
+    outline: none;
+    cursor: pointer;
+    transition: all .4s;
+
+    &:hover{
+        background-color: $color-primary;
+        color: $color-dark;
+    }
+
+    @include media-5(){
+        width: 150px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    @include media-7(){
+        width: 130px;
+        height: 30px;
+        font-size: 10px;
+    }
+}
+
+.card{
+    width: 33.3333%;
+    height: 30vw;
+    position: relative;
+    overflow: hidden;
+
+    &:hover .card-overlay{
+        left: 0;
+    }
+
+    &-img{
+        @extend %fullSpace;
+        object-fit: cover;
+        opacity: .5;
+    }
+
+    &-overlay{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        background-color: rgba($color-primary, .6);
+        color: $color-white;
+        z-index: 10;
+        @include flexLayout;
+        flex-direction: column;
+        @extend %fullSpace;
+        transition: left .7s;
+
+        &-heading{
+            font-family: $font-nunito;
+            font-size: 50px;
+            @include textStyles(capitalize);
+
+            @include media-4(){
+                font-size: 35px;
+            }
+
+            @include media-6(){
+                font-size: 25px;
+            }
+
+            @include media-7(){
+                display: none;
+            }
+        }
+
+        &-paragraph{
+            font-family: $font-josefinSans;
+            font-size: 30px;
+            margin-bottom: 30px;
+            @include textStyles(capitalize);
+
+            @include media-4(){
+                font-size: 20px;
+            }
+
+            @include media-6(){
+                font-size: 15px;
+            }
+
+            @include media-7(){
+                display: none;
+            }
+        }
+
+        &-btn{
+            width: 150px;
+            height: 40px;
+            color: $color-primary;
+            background-color: $color-white;
+            font-family: $font-josefinSans;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid $color-primary;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+
+            @include media-4(){
+                font-size: 12px;
+                width: 130px;
+                height: 30px;
+            }
+
+            @include media-6(){
+                font-size: 10px;
+                width: 100px;
+                height: 30px;
+            }
+        }
+    }
+}
